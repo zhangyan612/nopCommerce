@@ -163,6 +163,17 @@ namespace Nop.Web.Controllers
             return View(model);
         }
 
+        [HttpsRequirement(SslRequirement.Yes)]
+        public virtual IActionResult ConfirmReview(int reviewId)
+        {
+            if (reviewId == 0)
+                return Challenge();
+
+            //mark review as customer review submitted 
+
+            return View();
+        }
+
         //My account / Order details page / Print
         [HttpsRequirement(SslRequirement.Yes)]
         public virtual IActionResult PrintOrderDetails(int orderId)

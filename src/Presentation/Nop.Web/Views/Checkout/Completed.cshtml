@@ -23,15 +23,18 @@
                 <strong>@T("Checkout.YourOrderHasBeenSuccessfullyProcessed")</strong>
             </div>
             <div class="details">
+
                 <div class="order-number">
                     <strong>@T("Checkout.OrderNumber"): @Model.CustomOrderNumber</strong>
                 </div>
-                <div class="details-link">
-                    <a href="@Url.RouteUrl("OrderDetails", new { orderID = Model.OrderId })">@T("Checkout.PlacedOrderDetails")</a>
-                </div>
+                <p>Please check order detail for more instruction</p>
+
+                @*<div class="details-link">
+                    <a href="@Url.RouteUrl("OrderDetails", new { orderID = Model.OrderId })"><b>@T("Checkout.PlacedOrderDetails")</b></a>
+                </div>*@
             </div>
             <div class="buttons">
-                <input type="button" value="@T("Checkout.ThankYou.Continue")" class="button-1 order-completed-continue-button" onclick="setLocation('@Url.RouteUrl("Homepage")')" />
+                <input type="button" value="@T("PageTitle.OrderDetails")" class="button-1 order-completed-continue-button" onclick="setLocation('@Url.RouteUrl("OrderDetails", new { orderID = Model.OrderId })')" />
             </div>
         </div>
         @await Component.InvokeAsync("Widget", new { widgetZone = PublicWidgetZones.CheckoutCompletedBottom, additionalData = Model })

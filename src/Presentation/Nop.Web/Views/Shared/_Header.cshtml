@@ -4,7 +4,7 @@
         <div class="header-selectors-wrapper">
             @await Component.InvokeAsync("TaxTypeSelector")
             @await Component.InvokeAsync("CurrencySelector")
-            @await Component.InvokeAsync("LanguageSelector")
+            @*@await Component.InvokeAsync("LanguageSelector")*@
             @await Component.InvokeAsync("Widget", new { widgetZone = PublicWidgetZones.HeaderSelectors })
         </div>
         <div class="header-links-wrapper">

@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using Nop.Core;
 using Nop.Core.Domain.Orders;
@@ -40,6 +40,13 @@ namespace Nop.Services.Orders
         /// <returns>Order</returns>
         Order GetOrderByGuid(Guid orderGuid);
 
+        /// <summary>
+        /// Gets an item current number count in all previous orders
+        /// </summary>
+        /// <param name="productId">product Id</param>
+        /// <param name="orderId">order Id</param>
+        /// <returns>Number ranking</returns>
+        int GetNumberofItemBeforeCurrentOrder(int productId, int orderId);
         /// <summary>
         /// Deletes an order
         /// </summary>

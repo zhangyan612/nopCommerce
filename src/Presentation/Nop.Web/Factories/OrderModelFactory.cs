@@ -452,6 +452,24 @@ namespace Nop.Web.Factories
                     orderItemModel.LicenseId = orderItem.LicenseDownloadId.HasValue ? orderItem.LicenseDownloadId.Value : 0;
             }
 
+            //order review logic
+            var productId = model.Items.First().ProductId;
+            int numRanking = _orderService.GetNumberofItemBeforeCurrentOrder(productId, order.Id);
+            var review = _productService.GetOrderProductReview(productId, numRanking);
+
+            if (review != null)
+            {
+                model.OrderReviewId = review.Id;
+                model.OrderReviewRating = review.Rating;
+                model.OrderReviewTitle = review.Title;
+                model.OrderReviewText = review.ReviewText;
+                model.OrderReviewExist = true;
+            }
+            else
+            {
+                model.OrderReviewExist = false;
+            }
+
             return model;
         }
 

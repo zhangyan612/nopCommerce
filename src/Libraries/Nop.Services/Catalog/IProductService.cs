@@ -654,6 +654,14 @@ namespace Nop.Services.Catalog
         ProductReview GetProductReviewById(int productReviewId);
 
         /// <summary>
+        /// Gets an order's product review
+        /// </summary>
+        /// <param name="productId">Product id</param>
+        ///<param name="previousCount">previous reviews</param>
+        /// <returns>Product review</returns>
+        ProductReview GetOrderProductReview(int productId, int previousCount);
+
+        /// <summary>
         /// Get product reviews by identifiers
         /// </summary>
         /// <param name="productReviewIds">Product review identifiers</param>

@@ -2194,6 +2194,24 @@ namespace Nop.Services.Catalog
         }
 
         /// <summary>
+        /// Gets an order's product review
+        /// </summary>
+        /// <param name="productId">Product id</param>
+        ///<param name="previousCount">previous reviews</param>
+        /// <returns>Product review</returns>
+        public virtual ProductReview GetOrderProductReview(int productId, int previousCount)
+        {
+            if (productId == 0)
+                return null;
+
+            var review = (from r in _productReviewRepository.Table
+                        where r.ProductId == productId
+                        select r).Skip(previousCount).Take(1).FirstOrDefault();
+
+            return review;
+        }
+
+        /// <summary>
         /// Get product reviews by identifiers
         /// </summary>
         /// <param name="productReviewIds">Product review identifiers</param>

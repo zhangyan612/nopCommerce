@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -439,6 +439,20 @@ namespace Nop.Services.Orders
                         select orderItem;
             var item = query.FirstOrDefault();
             return item;
+        }
+
+        /// <summary>
+        /// Gets an item current number count in all previous orders
+        /// </summary>
+        /// <param name="productId">product Id</param>
+        /// <param name="orderId">order Id</param>
+        /// <returns>Number ranking</returns>
+        public virtual int GetNumberofItemBeforeCurrentOrder(int productId, int orderId)
+        {
+            var numberBefore = (from orderItem in _orderItemRepository.Table
+                        where orderItem.OrderId < orderId && orderItem.ProductId == productId
+                        select orderItem).Count();
+            return numberBefore;
         }
 
         /// <summary>
