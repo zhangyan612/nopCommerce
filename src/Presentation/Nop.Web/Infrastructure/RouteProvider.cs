@@ -294,6 +294,9 @@ namespace Nop.Web.Infrastructure
             routeBuilder.MapLocalizedRoute("OrderDetails", "orderdetails/{orderId:min(0)}",
 				new { controller = "Order", action = "Details" });
 
+            routeBuilder.MapLocalizedRoute("ConfirmReview", "confirmreview/{reviewId:min(0)}",
+                new { controller = "Order", action = "ConfirmReview" });
+
             routeBuilder.MapLocalizedRoute("ShipmentDetails", "orderdetails/shipment/{shipmentId}",
 				new { controller = "Order", action = "ShipmentDetails" });
 

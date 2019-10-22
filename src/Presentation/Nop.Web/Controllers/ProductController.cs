@@ -115,6 +115,9 @@ namespace Nop.Web.Controllers
             if (product == null || product.Deleted)
                 return InvokeHttp404();
 
+            if (!_workContext.CurrentCustomer.IsRegistered())
+                return Challenge();
+
             var notAvailable =
                 //published?
                 (!product.Published && !_catalogSettings.AllowViewUnpublishedProductPage) ||

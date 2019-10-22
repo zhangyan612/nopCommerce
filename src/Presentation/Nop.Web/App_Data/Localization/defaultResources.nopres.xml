@@ -17017,7 +17017,7 @@
     <Value>{0} in stock</Value>
   </LocaleResource>
   <LocaleResource Name="Products.Availability.OutOfStock">
-    <Value>Out of stock</Value>
+    <Value>Out of stock, please cancel your order</Value>
   </LocaleResource>
   <LocaleResource Name="Products.Availability.SelectRequiredAttributes">
     <Value>Please select required attribute(s)</Value>
@@ -17776,7 +17776,7 @@
     <Value>Product is not available</Value>
   </LocaleResource>
   <LocaleResource Name="ShoppingCart.OutOfStock">
-    <Value>Out of stock</Value>
+    <Value>Out of stock, please cancel your order</Value>
   </LocaleResource>
   <LocaleResource Name="ShoppingCart.PreOrder">
     <Value>Pre-order</Value>
@@ -18010,7 +18010,7 @@
     <Value>Vendors</Value>
   </LocaleResource>
   <LocaleResource Name="Vendors.ApplyAccount">
-    <Value>Apply for vendor account</Value>
+    <Value>Apply for seller account</Value>
   </LocaleResource>
   <LocaleResource Name="Vendors.ApplyAccount.AcceptTermsOfService">
     <Value>I accept terms of service</Value>

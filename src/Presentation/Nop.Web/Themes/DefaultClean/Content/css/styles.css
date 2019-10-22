@@ -5395,7 +5395,7 @@ pre {
 	clear: both;
 }
 .order-details-page .data-table tr {
-	width: 46%;
+	width: 98%;
 	margin: 40px 2% 0;
 }
 .order-details-page .data-table tr:nth-child(2n+1) {
@@ -5593,7 +5593,7 @@ pre {
 	clear: both;
 }
 .order-details-page .data-table tr {
-	width: 31.33333%;
+	width: 98%;
 	margin: 40px 1% 0;
 }
 .order-details-page .data-table tr:nth-child(2n+1) {
@@ -7081,4 +7081,14 @@ pre {
     max-width: 100%;
 }
 
+}
+
+/* Custom css*/
+
+.customBtn {
+  background-color: #f1b606;
+  padding: 10px 13px;
+  text-align: center;
+  color: #fff;
+  border: 0;
 }

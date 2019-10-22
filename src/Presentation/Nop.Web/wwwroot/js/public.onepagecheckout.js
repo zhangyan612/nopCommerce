@@ -152,7 +152,8 @@ var Billing = {
     },
 
     resetLoadWaiting: function () {
-        Checkout.setLoadWaiting(false);
+      Checkout.setLoadWaiting(false);
+      PaymentInfo.save();
     },
 
     nextStep: function (response) {
@@ -440,7 +441,8 @@ var PaymentInfo = {
     },
 
     resetLoadWaiting: function () {
-        Checkout.setLoadWaiting(false);
+      Checkout.setLoadWaiting(false);
+      ConfirmOrder.save();
     },
 
     nextStep: function (response) {
